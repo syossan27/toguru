@@ -7,7 +7,7 @@ php:
 
 before_script:
   - composer self-update
-  - composer install
+  - composer install --prefer-source
   - chmod -R 777 app/storage
 
 script:
