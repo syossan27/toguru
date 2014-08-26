@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
-@title
+@section('title')
 Toguru | トップ
 @stop
 
-@body
+@section('body')
 <h1>Toguru</h1>
 @stop
