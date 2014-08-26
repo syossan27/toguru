@@ -8,7 +8,7 @@ php:
 before_script:
   - composer self-update
   - composer install
-  - chmod -R 777 storage
+  - chmod -R 777 app/storage
 
 script:
   - mkdir -p build/logs
