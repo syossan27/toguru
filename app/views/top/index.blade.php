@@ -11,18 +11,6 @@ Toguru | トップ
 
 @section('body')
 
-<div class="header">
-    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-        <a class="pure-menu-heading" href="">Your Site</a>
-
-        <ul>
-            <li class="pure-menu-selected"><a href="#">Home</a></li>
-            <li><a href="#">Tour</a></li>
-            <li><a href="#">Sign Up</a></li>
-        </ul>
-    </div>
-</div>
-
 <div class="splash-container">
     <div class="splash">
         <h1 class="splash-head">Big Bold Text</h1>
@@ -136,13 +124,7 @@ Toguru | トップ
                 </p>
             </div>
         </div>
-
     </div>
-
-    <div class="footer l-box is-center">
-        View the source of this layout to learn more. Made with love by the YUI Team.
-    </div>
-
 </div>
 
 @stop
