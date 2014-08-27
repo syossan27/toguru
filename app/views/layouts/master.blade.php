@@ -8,13 +8,11 @@
 			@yield('title')
 		</title>
 		{{ HTML::style('http://yui.yahooapis.com/pure/0.5.0/pure-min.css') }}
-		{{ HTML::style('http://yui.yahooapis.com/pure//grids-responsive.css') }}
 		@yield('css')
 		@yield('js')
 	</head>
 	<body>
 		@include('elements.header')	
 		@yield('body')
-		@include('elements.footer')	
 	</body>
 </html>

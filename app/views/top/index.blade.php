@@ -13,9 +13,9 @@ Toguru | トップ
 
 <div class="splash-container">
     <div class="splash">
-        <h1 class="splash-head">Big Bold Text</h1>
+        <h1 class="splash-head">Toguru</h1>
         <p class="splash-subhead">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+           Toguruはエンジニアの師匠 or 弟子を繋ぐサービスです。 
         </p>
         <p>
             <a href="http://purecss.io" class="pure-button pure-button-primary">Get Started</a>
@@ -25,53 +25,54 @@ Toguru | トップ
 
 <div class="content-wrapper">
     <div class="content">
-        <h2 class="content-head is-center">Excepteur sint occaecat cupidatat.</h2>
+        <h2 class="content-head is-center">Toguruはこんなサービス</h2>
 
+        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+						<!-- サービス概念図 -->
+            <img class="pure-img-responsive" alt="File Icons" width="300" src="img/common/file-icons.png">
+        </div>
         <div class="pure-g">
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
                 <h3 class="content-subhead">
                     <i class="fa fa-rocket"></i>
-                    Get Started Quickly
+										ウリ一つ目
                 </h3>
                 <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+										ウリの説明
                 </p>
             </div>
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
                 <h3 class="content-subhead">
                     <i class="fa fa-mobile"></i>
-                    Responsive Layouts
+										ウリ２つ目
                 </h3>
                 <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+										ウリの説明
                 </p>
             </div>
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
                 <h3 class="content-subhead">
                     <i class="fa fa-th-large"></i>
-                    Modular
+										ウリ３つ目
                 </h3>
                 <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+										ウリの説明
                 </p>
             </div>
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
                 <h3 class="content-subhead">
                     <i class="fa fa-check-square-o"></i>
-                    Plays Nice
+										ウリ４つ目
                 </h3>
                 <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+										ウリの説明
                 </p>
             </div>
         </div>
     </div>
 
     <div class="ribbon l-box-lrg pure-g">
-        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-            <img class="pure-img-responsive" alt="File Icons" width="300" src="img/common/file-icons.png">
-        </div>
         <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
 
             <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
@@ -125,6 +126,9 @@ Toguru | トップ
             </div>
         </div>
     </div>
+		
+		@include('elements.footer')	
+
 </div>
 
 @stop
