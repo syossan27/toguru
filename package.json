@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/syossan27/toguru",
   "devDependencies": {
-    "gulp": "^3.8.7"
+    "gulp": "^3.8.7",
+    "gulp-plumber": "^0.6.5",
+    "gulp-sass": "^0.7.3"
   }
 }
