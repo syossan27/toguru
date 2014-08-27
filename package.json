@@ -1,0 +1,22 @@
+{
+  "name": "toguru",
+  "version": "0.0.0",
+  "description": "![alt tag](https://travis-ci.org/syossan27/toguru.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/syossan27/toguru/badge.png?branch=master)](https://coveralls.io/r/syossan27/toguru?branch=master)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syossan27/toguru.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syossan27/toguru/issues"
+  },
+  "homepage": "https://github.com/syossan27/toguru",
+  "devDependencies": {
+    "gulp": "^3.8.7"
+  }
+}
