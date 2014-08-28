@@ -15,11 +15,16 @@ Toguru | トップ
     <div class="splash">
         <h1 class="splash-head">Toguru</h1>
         <p class="splash-subhead">
-           Toguruはエンジニアの師匠 or 弟子を繋ぐサービスです。 
+           Toguruはエンジニアの師匠と弟子を繋ぐサービスです。 
         </p>
-        <p>
-            <a href="http://purecss.io" class="pure-button pure-button-primary">Get Started</a>
-        </p>
+				<form action="/verify_mail/" class="pure-form pure-g">
+						<div class="pure-u-3-4">
+							<input id="email" type="email" placeholder="Email">
+						</div>
+						<div class="pure-u-1-4">
+							<button type="submit" class="pure-button">Sign up</button>
+						</div>
+				</form>
     </div>
 </div>
 

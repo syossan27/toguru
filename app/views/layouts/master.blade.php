@@ -8,6 +8,7 @@
 			@yield('title')
 		</title>
 		{{ HTML::style('http://yui.yahooapis.com/pure/0.5.0/pure-min.css') }}
+		{{ HTML::style('http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css') }}
 		@yield('css')
 		@yield('js')
 	</head>
