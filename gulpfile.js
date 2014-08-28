@@ -20,5 +20,5 @@ gulp.task('scss', function() {
 });
 
 gulp.task('composer', function () {
-    composer('update',{bin:'composer update'});
+    composer('update',{bin:'composer'});
 });
