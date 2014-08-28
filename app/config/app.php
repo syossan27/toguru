@@ -121,7 +121,6 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Zizaco\Confide\ServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider'
 
 	),
@@ -158,7 +157,6 @@ return array(
 		'Blade'             => 'Illuminate\Support\Facades\Blade',
 		'Cache'             => 'Illuminate\Support\Facades\Cache',
 		'ClassLoader'       => 'Illuminate\Support\ClassLoader',
-		'Confide'           => 'Zizaco\Confide\Facade',
 		'Config'            => 'Illuminate\Support\Facades\Config',
 		'Controller'        => 'Illuminate\Routing\Controller',
 		'Cookie'            => 'Illuminate\Support\Facades\Cookie',
