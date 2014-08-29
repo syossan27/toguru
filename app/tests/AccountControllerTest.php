@@ -12,12 +12,12 @@ class AccountControllerTest extends TestCase {
 
 		$crawler = $this->client->request('Post', '/login',
 			array(	
-				'username' = 'hoge',
-				'password' = 'hoge'
+				'username' => 'hoge',
+				'password' => 'hoge'
 			)
 		);
 
-		$this->assertTrue($this->client->getUri() == '/' ? true : false);
+		$this->assertTrue($this->client->getUri() === '/' ? true : false);
 	}
 
 }
