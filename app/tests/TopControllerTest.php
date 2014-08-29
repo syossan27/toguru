@@ -22,6 +22,7 @@ class TopControllerTest extends TestCase {
 	public function testAccessableTopViewAfterLogin()
 	{
 
+		// TODO
 		// ログイン済みにする
 		// テストデータにログイン出来るユーザを作り、
 		// Confideのログイン処理で直接ログインユーザのID、パスワードを入力してあげる
