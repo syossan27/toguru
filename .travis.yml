@@ -24,3 +24,7 @@ after_script:
 notifications:
   emails:
       - wisdom1027@gmail.com
+
+addons:
+  hosts:
+    - travis
