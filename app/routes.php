@@ -14,11 +14,22 @@
 // トップページ
 Route::get('/', 'TopController@index');
 
+// ログイン・ログアウト
+Route::post('login', 'AccountController@login');
+Route::get('logout', 'AccountController@logout');
+Route::get('fb_login', 'AccountController@fb_login');
+Route::get('fb_login/callback', 'AccountController@fb_login_callback');
+Route::get('tw_login', 'AccountController@tw_login');
+
 // メールアドレス認証
-Route::get('verify_mail/', 'UserController@index');
+Route::get('verify_mail', 'UserController@index');
+
+Route::when('search*', 'auth');
+Route::when('edit*', 'auth');
+Route::when('setting*', 'auth');
 
 // 師匠・弟子検索ページ
-Route::get('search/', 'SearchController@index');
+Route::get('search', 'SearchController@index');
 Route::get('search/pupil', 'SearchController@pupil');
 Route::get('search/pupil/{id}', 'SearchController@pupil_detail');
 Route::get('search/pupil/{id}/request', 'SearchController@pupil_request');
@@ -27,11 +38,11 @@ Route::get('search/master/{id}', 'SearchController@master_detail');
 Route::get('search/master/{id}/request', 'SearchController@master_request');
 
 // 師匠・弟子文言編集ページ
-Route::get('edit/', 'EditController@index');
+Route::get('edit', 'EditController@index');
 Route::get('edit/pupil', 'EditController@pupil');
 Route::post('edit/pupil', 'EditController@pupil_updating');
 Route::get('edit/master', 'EditController@master');
 Route::post('edit/master', 'EditController@master_updating');
 
 // 設定ページ
-Route::get('setting/', 'SettingController@index');
+Route::get('setting', 'SettingController@index');

@@ -5,8 +5,10 @@ Toguru | トップ
 @stop
 
 @section('css')
-{{ HTML::style('css/toguru.css') }}
 {{ HTML::style('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css') }}
+@stop
+
+@section('js')
 @stop
 
 @section('body')
@@ -17,12 +19,27 @@ Toguru | トップ
         <p class="splash-subhead">
            Toguruはエンジニアの師匠と弟子を繋ぐサービスです。 
         </p>
-				<form action="/verify_mail/" class="pure-form pure-g">
-						<div class="pure-u-3-4">
+				<!-- Sign Up -->
+				<form action="/verify_mail/" class="pure-form pure-g pure-u-11-24">
+						<div class="pure-u-17-24">
 							<input id="email" type="email" placeholder="Email">
 						</div>
-						<div class="pure-u-1-4">
+						<div class="pure-u">
 							<button type="submit" class="pure-button">Sign up</button>
+						</div>
+						<a href="/fb_login">fb</a>
+						<a href="/tw_login">tw</a>
+				</form>
+				<!-- Sign In -->
+				<form action="/verify_mail/" class="pure-form pure-g pure-u-11-24">
+						<div class="pure-u-1">
+							<input id="email" type="email" placeholder="Email">
+						</div>
+						<div class="pure-u-17-24">
+							<input id="password" type="password" placeholder="Password">
+						</div>
+						<div class="pure-u">
+							<button type="submit" class="pure-button">Sign In</button>
 						</div>
 				</form>
     </div>

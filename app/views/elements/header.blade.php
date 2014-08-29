@@ -4,7 +4,6 @@
 
         <ul>
             <li class="pure-menu-selected">{{ HTML::link('/', 'Home') }}</li>
-            <li><a href="#">Sign Up</a></li>
         </ul>
     </div>
 </div>
