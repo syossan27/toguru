@@ -17,7 +17,7 @@ class AccountControllerTest extends TestCase {
 			)
 		);
 
-		$this->assertTrue($this->client->getUri() === '/');
+		$this->assertTrue($this->client->getUri() === '/'? true:false);
 	}
 
 }
