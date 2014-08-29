@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'production' => array('travis'),
+	'staging' => array('travis'),
 
 ));
 
