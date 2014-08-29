@@ -5,6 +5,10 @@ php:
   - 5.5
   - 5.6
 
+addons:
+  hosts:
+    - travis
+
 before_script:
   - composer self-update
   - composer install --prefer-source
@@ -24,7 +28,3 @@ after_script:
 notifications:
   emails:
       - wisdom1027@gmail.com
-
-addons:
-  hosts:
-    - travis
