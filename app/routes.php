@@ -20,6 +20,7 @@ Route::get('logout', 'AccountController@logout');
 Route::get('fb_login', 'AccountController@fb_login');
 Route::get('fb_login/callback', 'AccountController@fb_login_callback');
 Route::get('tw_login', 'AccountController@tw_login');
+Route::get('tw_login/callback', 'AccountController@tw_login_callback');
 
 // メールアドレス認証
 Route::get('verify_mail', 'UserController@index');

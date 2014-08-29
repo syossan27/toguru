@@ -60,6 +60,38 @@ class AccountController extends BaseController {
 	// Twitterログイン
 	public function tw_login()
 	{
+		if (Auth::check()) {
+			return Redirect::to('/')->with('message', 'ログイン済みです。');
+		}
+		$tokens = Twitter::oAuthRequestToken();
+		Twitter::oAuthAuthorize(array_get($tokens, 'oauth_token'));
+		die;
+	}
+
+	public function tw_login_callback()
+	{
+		$token = Input::get('oauth_token');
+		$verifier = Input::get('oauth_verifier');
+		$accessToken = Twitter::oAuthAccessToken($token, $verifier);
+
+		if (isset($accessToken['user_id'])) {
+			$user_id = $accessToken['user_id'];
+			$user = User::find($user_id);
+			if (empty($user)) {
+				$user = new User;
+				$user->tw_id = $user_id;
+			}
+			$user->tw_name = $accessToken['screen_name'];
+			$user->tw_token = $accessToken['oauth_token'];
+			$user->tw_token_secret = $accessToken['oauth_token_secret'];
+			$user->save();
+
+			Auth::login($user);
+
+			return Redirect::to('/');
+		} else {
+			return Redirect::to('login')->with('message', 'Twitter認証できませんでした。');
+		}
 	}
 
 	public function logout()
