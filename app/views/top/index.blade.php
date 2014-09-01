@@ -20,28 +20,28 @@ Toguru | トップ
            Toguruはエンジニアの師匠と弟子を繋ぐサービスです。 
         </p>
 				<!-- Sign Up -->
-				<form action="/verify_mail/" class="pure-form pure-g pure-u-11-24">
+				{{ Form::open(array('action' => 'AccountController@verifyMail', 'class' => 'pure-form pure-g pure-u-11-24', 'method' => 'post')) }}
 						<div class="pure-u-17-24">
-							<input id="email" type="email" placeholder="Email">
+							<input id="email" type="email" name="email" placeholder="Email" value="wisdom1027@gmail.com">
 						</div>
 						<div class="pure-u">
 							<button type="submit" class="pure-button">Sign up</button>
 						</div>
 						<a href="/fb_login">fb</a>
 						<a href="/tw_login">tw</a>
-				</form>
+				{{ Form::close() }}
 				<!-- Sign In -->
-				<form action="/verify_mail/" class="pure-form pure-g pure-u-11-24">
+				{{ Form::open(array('action' => 'AccountController@login', 'class' => 'pure-form pure-g pure-u-11-24', 'method' => 'post')) }}
 						<div class="pure-u-1">
-							<input id="email" type="email" placeholder="Email">
+							<input id="username" type="username" name="username" placeholder="ユーザ名">
 						</div>
 						<div class="pure-u-17-24">
-							<input id="password" type="password" placeholder="Password">
+							<input id="password" type="password" name="password" placeholder="パスワード">
 						</div>
 						<div class="pure-u">
 							<button type="submit" class="pure-button">Sign In</button>
 						</div>
-				</form>
+				{{ Form::close() }}
     </div>
 </div>
 
@@ -53,6 +53,7 @@ Toguru | トップ
 						<!-- サービス概念図 -->
             <img class="pure-img-responsive" alt="File Icons" width="300" src="img/common/file-icons.png">
         </div>
+
         <div class="pure-g">
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
@@ -117,14 +118,14 @@ Toguru | トップ
                     <fieldset>
 
                         <label for="name">Your Name</label>
-                        <input id="name" type="text" placeholder="Your Name">
+                        <input id="name" type="text" name="name" placeholder="Your Name">
 
 
                         <label for="email">Your Email</label>
-                        <input id="email" type="email" placeholder="Your Email">
+                        <input id="email" type="email" name="email" placeholder="Your Email">
 
                         <label for="password">Your Password</label>
-                        <input id="password" type="password" placeholder="Your Password">
+                        <input id="password" type="password" name="password" placeholder="Your Password">
 
                         <button type="submit" class="pure-button">Sign Up</button>
                     </fieldset>

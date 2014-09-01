@@ -35,7 +35,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	public function getAuthPassword()
 	{
-		return null;
+		return $this->password;
 	}
 
 }
