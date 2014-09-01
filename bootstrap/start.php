@@ -26,7 +26,8 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'staging' => array('*'),
+	'local' => array('*.local'),
+	'staging' => array('travis.stg'),
 
 ));
 

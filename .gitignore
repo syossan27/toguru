@@ -8,4 +8,3 @@ composer.lock
 Thumbs.db
 .sass-cache/*
 node_modules
-/app/config/database.php
