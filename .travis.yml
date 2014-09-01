@@ -15,7 +15,7 @@ before_script:
   - chmod -R 777 app/storage
   - chmod -R 777 app/storage
   - mysql -e 'create database toguru'
-  - php artisan migrate --seed
+  - php artisan migrate --seed --force
 
 script:
   - mkdir -p build/logs
