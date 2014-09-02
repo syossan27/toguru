@@ -64,7 +64,7 @@ class AccountController extends BaseController {
 		$hash			= Input::get('hash');
 
 		// 直で遷移された場合は、トップページへ遷移し、エラーメッセージを表示
-		if ( $username == '' && $password == '' ) {
+		if ( $username === '' && $password === '' && $hash === '' ) {
 			return Redirect::to('/');
 		}
 
