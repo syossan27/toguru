@@ -7,7 +7,7 @@ class TopController extends BaseController {
 		// ログイン確認
 		if ( Auth::check() ) {
 			// ログイン済みの場合、マイページを表示
-			return View::make('top.index');
+			return View::make('top.mypage');
 		} else {
 			// 未ログインの場合、ランディングページを表示
 			return View::make('top.index');

@@ -7,10 +7,8 @@ class AccountController extends BaseController {
 	{
 
 		// 仮ユーザ登録
-		// ハッシュ値の元をメールアドレスにしているが
-		// 他に良い方法があれば変更
 		// TODO
-		// 既にメールを送信している場合
+		// 既にメールを送信している場合の処理
 		$confirm_hash = md5( uniqid(mt_rand(), true) );
 		$signup_url = Config::get('app.url')."/signup/".$confirm_hash;
 		$mail_address = Input::get('email');
@@ -56,6 +54,9 @@ class AccountController extends BaseController {
 	public function signUpComplete()
 	{
 
+		// TODO
+		// 登録内容が重複する場合の処理
+
 		// インプット内容を取得
 		// 内容のバリデートはView側で制御
 		$username = Input::get('username');
@@ -73,9 +74,11 @@ class AccountController extends BaseController {
 		// 登録後ログイン
 		if ( Auth::attempt(['username' => $username, 'password' => Input::get('password'), 'valid' => 1], true) )
 		{
-			return Redirect::intended('/');
+			return Redirect::to('/');
 		} else {
-			return Redirect::to('http://google.co.jp');
+			// TODO
+			// トップページにエラーメッセージを表示
+			return Redirect::to('/');
 		}
 
 	}
@@ -89,7 +92,9 @@ class AccountController extends BaseController {
 
 		if ( Auth::attempt( ['username' => $username, 'password' => $password, 'valid' => 1], true) )
 		{
-			return Redirect::intended('/');
+			return Redirect::to('/');
+		} else {
+			return Redirect::to('/');
 		}
 
 		// View上で「ログイン出来ませんでしたと表示」
