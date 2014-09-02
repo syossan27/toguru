@@ -9,11 +9,12 @@ class AccountControllerTest extends TestCase {
 	 */
 	public function testSuccessLogin()
 	{
-
 		$user = User::find(1);
 		Auth::login($user);
 
-		$this->assertTrue($this->client->getResponse()->isOk());
+		$crawler = $this->client->request('Get', '/');
+
+		$this->assertGreaterThan(0, $crawler->filter('html:contains("マイページ")')->count());
 	}
 
 }
