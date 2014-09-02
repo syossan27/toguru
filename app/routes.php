@@ -28,22 +28,26 @@ Route::get('signup/{hash}', 'AccountController@signUp');
 Route::post('signup/complete', 'AccountController@signUpComplete');
 
 Route::when('search*', 'auth');
-Route::when('edit*', 'auth');
+Route::when('pupil*', 'auth');
+Route::when('master*', 'auth');
 Route::when('setting*', 'auth');
+
+// 検索ページ
+Route::get('search', 'SearchController@index');
 
 // 弟子関連ページ
 Route::get('pupil', 'PupilController@index');
 Route::get('pupil/search', 'PupilController@search');
-Route::get('pupil/search/{id}', 'PupilController@search_detail');
-Route::get('pupil/search/{id}/request', 'PupilController@request');
+Route::get('pupil/detail/{id}', 'PupilController@detail');
+Route::post('pupil/request/{id}', 'PupilController@request');
 Route::get('pupil/edit', 'PupilController@edit');
 Route::post('pupil/edit', 'PupilController@update');
 
 // 師匠関連ページ
 Route::get('master', 'MasterController@index');
 Route::get('master/search', 'MasterController@search');
-Route::get('master/search/{id}', 'MasterController@search_detail');
-Route::get('master/search/{id}/request', 'MasterController@request');
+Route::get('master/detail/{id}', 'MasterController@detail');
+Route::post('master/detail/{id}/request', 'MasterController@request');
 Route::get('master/edit', 'MasterController@edit');
 Route::post('master/edit', 'MasterController@update');
 
