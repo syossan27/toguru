@@ -10,12 +10,8 @@ class AccountControllerTest extends TestCase {
 	public function testSuccessLogin()
 	{
 
-		$crawler = $this->client->request('Post', '/login',
-			array(	
-				'username' => 'hoge',
-				'password' => 'hoge'
-			)
-		);
+		$user = User::find(1);
+		Auth::login($user);
 
 		$this->assertTrue($this->client->getResponse()->isOk());
 	}
