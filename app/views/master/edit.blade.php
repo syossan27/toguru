@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Toguru | 弟子紹介文編集
+Toguru | 師匠紹介文編集
 @stop
 
 @section('css')
@@ -19,7 +19,7 @@ Toguru | 弟子紹介文編集
 
 <div class="splash-container">
     <div class="splash">
-			<h1>弟子紹介文編集ページ</h1>
+			<h1>師匠紹介文編集ページ</h1>
 			{{ Form::textarea('description', '', ['id' => 'description'])}}
 			{{ Form::text('skill', '', ['id' => 'tagit'])}}
 			{{ Form::submit('submit', ['id' => 'edit-submit'])}}

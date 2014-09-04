@@ -31,7 +31,6 @@ class PupilController extends BaseController {
 	// 弟子情報編集実行ページ
 	public function update()
 	{
-
 		// Get edit data
 		$input_all = Input::all();
 		$skill = trim($input_all['skill']);

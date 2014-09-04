@@ -1,8 +1,8 @@
 <?php
 
-class Pupil extends Eloquent {
+class Master extends Eloquent {
 
-	protected $table = 'pupil';
+	protected $table = 'master';
 
 	protected $fillable = array('user_id', 'skill', 'description');
 
