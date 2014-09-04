@@ -6,12 +6,22 @@ class AccountController extends BaseController {
 	public function verifyMail()
 	{
 
+
 		// 仮ユーザ登録
-		// TODO
-		// 既にメールを送信している場合の処理
 		$confirm_hash = md5( uniqid(mt_rand(), true) );
 		$signup_url = Config::get('app.url')."/signup/".$confirm_hash;
 		$mail_address = Input::get('email');
+
+		// 既に登録している場合はメール送信を行わずトップページにてエラーメッセージの表示
+		if ( !is_null($old_temp_user = User::firstByAttributes(['mail_address' => $mail_address, 'valid' => 1])) ) {
+			return Redirect::to('/');
+		}	
+
+		// 以前にメールを送信した場合
+		// 過去の仮ユーザ情報を削除
+		if ( !is_null($old_temp_user = User::firstByAttributes(['mail_address' => $mail_address, 'valid' => 0])) ) {
+			$old_temp_user->forceDelete();	
+		}	
 
 		$user = new User;
 		$user['mail_address'] = $mail_address; 
@@ -54,14 +64,18 @@ class AccountController extends BaseController {
 	public function signUpComplete()
 	{
 
-		// TODO
-		// 登録内容が重複する場合の処理
-
 		// インプット内容を取得
 		// 内容のバリデートはView側で制御
 		$username = Input::get('username');
 		$password = Hash::make(Input::get('password'));
 		$hash			= Input::get('hash');
+
+		// TODO
+		// フィードに入力した時点で重複判定するようにしたい
+		// 登録内容が重複する場合の処理
+		if ( !is_null(User::firstByAttributes(['username' => $username])) ){
+			// エラー処理
+		}
 
 		// 直で遷移された場合は、トップページへ遷移し、エラーメッセージを表示
 		if ( $username === '' && $password === '' && $hash === '' ) {
