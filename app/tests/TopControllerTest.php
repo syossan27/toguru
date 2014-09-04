@@ -9,9 +9,9 @@ class TopControllerTest extends TestCase {
 	 */
 	public function testAccessableTopViewBeforeLogin()
 	{
-		$crawler = $this->client->request('GET', '/');
+		$crawler = $this->client->request('Get', '/');
 
-		$this->assertTrue($this->client->getResponse()->isOk());
+		$this->assertGreaterThan(0, $crawler->filter('html:contains("トップ")')->count());
 	}
 
 	/**
@@ -22,14 +22,13 @@ class TopControllerTest extends TestCase {
 	public function testAccessableTopViewAfterLogin()
 	{
 
-		// TODO
-		// ログイン済みにする
-		// テストデータにログイン出来るユーザを作り、
-		// Confideのログイン処理で直接ログインユーザのID、パスワードを入力してあげる
+		$user = User::find(1);
+		Auth::login($user);
 
-		$crawler = $this->client->request('GET', '/');
+		$crawler = $this->client->request('Get', '/');
 
-		$this->assertTrue($this->client->getResponse()->isOk());
+		$this->assertGreaterThan(0, $crawler->filter('html:contains("マイページ")')->count());
+
 	}
 
 }
