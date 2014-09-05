@@ -10,6 +10,11 @@ class MasterController extends BaseController {
 	// 師匠検索ページ
 	public function search()
 	{
+		$search_text = Input::only(['search_text']);
+
+		$search_result = Master::search($search_text)->get();
+		
+		return View::make('master.search')->with('users', $search_result);
 	}
 
 	// 師匠情報ページ

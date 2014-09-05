@@ -41,12 +41,14 @@ h1, h2, h3, h4, h5, h6, label {
   margin: 1em 0 0;
   font-weight: bold;
   font-size: 100%; }
+
 .pure-form input[type] {
   border: 2px solid #ddd;
   box-shadow: none;
   font-size: 100%;
   width: 100%;
   margin-bottom: 1em; }
+
 .pure-form button[type=submit] {
   margin: 0 0 0 !important; }
 
@@ -205,20 +207,25 @@ a.pure-button-primary {
   /* We remove the border-separator assigned to .l-box-lrg */
   body {
     font-size: 16px; }
+
   .content {
     padding: 1em; }
+
   .home-menu {
     text-align: left; }
-    .home-menu ul {
-      float: right; }
+
+  .home-menu ul {
+    float: right; }
+
   .splash {
     width: 70%;
     height: 50%; }
+
   .splash-head {
     font-size: 250%; }
+
   .l-box-lrg {
     border: none; } }
-
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
  * On desktops and other large devices, we want to over-ride some
@@ -228,3 +235,5 @@ a.pure-button-primary {
   /* We increase the header font size even more */
   .splash-head {
     font-size: 300%; } }
+
+/*# sourceMappingURL=toguru.css.map */

@@ -10,6 +10,11 @@ class PupilController extends BaseController {
 	// 弟子検索ページ
 	public function search()
 	{
+		$search_text = Input::only(['search_text']);
+
+		$search_result = Pupil::search($search_text)->get();
+		
+		return View::make('pupil.search')->with('users', $search_result);
 	}
 
 	// 弟子情報ページ
