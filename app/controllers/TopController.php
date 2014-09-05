@@ -4,13 +4,16 @@ class TopController extends BaseController {
 
 	public function index()
 	{
-		// ログイン確認
+
+		$message = Session::get('message', '');
+
+		// Check Login Status
 		if ( Auth::check() ) {
-			// ログイン済みの場合、マイページを表示
+			// if Logged in, Display mypage 
 			return View::make('top.mypage');
 		} else {
-			// 未ログインの場合、ランディングページを表示
-			return View::make('top.index');
+			// if not Logged in, Display top with message
+			return View::make('top.index')->with('message', $message);
 		}
 	}
 

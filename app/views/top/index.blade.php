@@ -16,6 +16,7 @@ Toguru | トップ
 <div class="splash-container">
     <div class="splash">
         <h1 class="splash-head">Toguru</h1>
+				{{ $message }}
         <p class="splash-subhead">
            Toguruはエンジニアの師匠と弟子を繋ぐサービスです。 
         </p>

@@ -12,7 +12,7 @@
 		{{ HTML::style('css/toguru.css') }}
 		@yield('css')
 		{{ HTML::script('http://code.jquery.com/jquery-1.11.1.min.js') }}
-		{{ HTML::script('https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js') }}
+		{{ HTML::script('https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js') }}
 		{{ HTML::script('js/toguru.js') }}
 		@yield('js')
 	</head>

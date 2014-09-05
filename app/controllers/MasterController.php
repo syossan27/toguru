@@ -45,7 +45,6 @@ class MasterController extends BaseController {
 		// Update master profile
 		Master::updateOrCreate(['user_id' => $user_id], ['user_id' => $user_id, 'skill' => $skill, 'description' => $description]);
 
-		return;
 	}
 
 }

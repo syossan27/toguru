@@ -53,3 +53,4 @@ Route::post('master/edit', 'MasterController@update');
 
 // 設定ページ
 Route::get('setting', 'SettingController@index');
+Route::get('setting/deleteAccount', 'SettingController@deleteAccount');
