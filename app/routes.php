@@ -53,4 +53,9 @@ Route::post('master/edit', 'MasterController@update');
 
 // 設定ページ
 Route::get('setting', 'SettingController@index');
-Route::get('setting/deleteAccount', 'SettingController@deleteAccount');
+Route::get('setting/delete-account', 'SettingController@deleteAccount');
+Route::get('setting/update-password', 'SettingController@viewUpdateUserPassword');
+Route::post('setting/update-password', 'SettingController@updateUserPassword');
+Route::post('setting/check-old-password', 'SettingController@checkOldPassword');
+Route::get('setting/update-username', 'SettingController@viewUpdateUserName');
+Route::post('setting/update-username', 'SettingController@updateUserName');

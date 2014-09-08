@@ -17,15 +17,16 @@ Toguru | 設定
 
 <div class="splash-container">
     <div class="splash" style="width:100% !important">
-			<h1>設定</h1>
-			<a href="/setting/update-username">ユーザ名変更</a>
-			<br>
-			<a href="/setting/update-password">パスワード変更</a>
-			<br>
-			<button class="button-error pure-button" id="delete-button">退会</a>
-			<div id="delete-dialog" title="退会処理">
-				<p>本当に退会してもよろしいですか？</p>
-			</div>
+			<h1>パスワード変更</h1>
+			{{ Form::open(['action' => 'SettingController@updateUserName']) }}
+				現在のユーザ名：{{ $current_username }}
+				<br>
+				新しいユーザ名：{{ Form::text('new_username', '', ['id' => 'new_username']) }}
+				<div id="error_new_username">ユーザ名を入力してください。</div> 
+				<br>
+				<button type="submit" class="pure-button">変更</button>
+			{{ Form::close() }}
+			<a href="/setting">設定に戻る</a>
     </div>
 </div>
 
