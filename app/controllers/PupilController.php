@@ -20,11 +20,17 @@ class PupilController extends BaseController {
 	// 弟子情報ページ
 	public function detail($id)
 	{
+		$pupil_detail = Pupil::getUserDetail($id)->first();
+		return View::make('pupil.detail')->with('pupil_detail', $pupil_detail);
 	}
 
 	// 弟子リクエストページ
-	public function request($id)
+	public function request($pupil_id)
 	{
+		$user_id = Auth::id();
+		$master_id = Master::where('user_id', '=', $user_id)->pluck('id');
+		Connection::updateOrCreate(['master_id' => $master_id, 'pupil_id' => $pupil_id, 'status' => '2']);
+		return;
 	}
 
 	// 弟子情報編集ページ

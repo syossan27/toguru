@@ -2,6 +2,8 @@
 
 trait Search {
 
+	// cf. http://laravel.com/docs/eloquent#query-scopes
+	//
 	public function scopeSearch($query, $search_text)
 	{
 		return $query->join('users', 'user_id', '=' ,'users.id')

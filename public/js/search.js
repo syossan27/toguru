@@ -39,5 +39,28 @@ $(document).ready(function(){
 		})
 	});
 
+	// Request to pupil/master 
+	$(".search-right")
+	.on("click", ".request-master-button", function(){
+		var master_id = $(this).val();
+		openRequestWindow('master', master_id);
+	})
+	.on("click", ".request-pupil-button", function(){
+		var pupil_id = $(this).val();
+		openRequestWindow('pupil', pupil_id);
+	});
+
+	function openRequestWindow(request_to, id){
+
+		// window centering
+		var width = 800;
+		var height = 600;
+		var left = (screen.width / 2) - (width / 2);
+		var top = (screen.height / 2) - (height / 2);
+
+		window.open('/'+request_to+'/detail/'+id, '_blank', 'width='+width+', height='+height+', top='+top+', left='+left);
+
+	}
+
 });
 

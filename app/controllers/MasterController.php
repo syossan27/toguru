@@ -20,11 +20,17 @@ class MasterController extends BaseController {
 	// 師匠情報ページ
 	public function detail($id)
 	{
+		$master_detail = Master::getUserDetail($id)->first();
+		return View::make('master.detail')->with('master_detail', $master_detail);
 	}
 
 	// 師匠リクエストページ
-	public function request($id)
+	public function request($master_id)
 	{
+		$user_id = Auth::id();
+		$pupil_id = Pupil::where('user_id', '=', $user_id)->pluck('id');
+		Connection::updateOrCreate(['master_id' => $master_id, 'pupil_id' => $pupil_id, 'status' => '3']);
+		return;
 	}
 
 	// 師匠情報編集ページ

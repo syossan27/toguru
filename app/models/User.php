@@ -16,6 +16,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'users';
 	protected $fillable = array(
+															'id',
 															'username',
 															'password'
 														);
@@ -51,5 +52,4 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		$this->update(['username' => $username]);
 	}
-
 }

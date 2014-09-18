@@ -47,7 +47,7 @@ Route::post('pupil/edit', 'PupilController@update');
 Route::get('master', 'MasterController@index');
 Route::post('master/search', 'MasterController@search');
 Route::get('master/detail/{id}', 'MasterController@detail');
-Route::post('master/detail/{id}/request', 'MasterController@request');
+Route::post('master/request/{id}', 'MasterController@request');
 Route::get('master/edit', 'MasterController@edit');
 Route::post('master/edit', 'MasterController@update');
 
