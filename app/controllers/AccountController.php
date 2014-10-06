@@ -133,22 +133,22 @@ class AccountController extends BaseController {
 		}
 
 		$facebook = new Facebook(Config::get('facebook'));
-		$user_id = $facebook->getUser();
+		$fb_id = $facebook->getUser();
 
-		if ($user_id == 0) {
+		if ($fb_id == 0) {
 			return Redirect::to('/')->with('message', 'ログインできませんでした。');
 		}
 
+		$user_id = User::where('fb_id', '=', $fb_id)->pluck('id');
 		$user = User::find($user_id);
 		if (empty($user)) {
 			$user = new User;
-			$user->fb_id = $user_id;
+			$user->fb_id = $fb_id;
+			$me = $facebook->api('/me');
+			$user->username = $me['name'];
+			$user->fb_access_token = $facebook->getAccessToken();
+			$user->save();
 		}
-
-		$me = $facebook->api('/me');
-		$user->username = $me['name'];
-		$user->fb_access_token = $facebook->getAccessToken();
-		$user->save();
 
 		Auth::login($user);
 
