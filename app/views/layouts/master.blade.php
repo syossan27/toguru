@@ -17,7 +17,6 @@
 		@yield('js')
 	</head>
 	<body>
-		@include('elements.header')	
 		@yield('body')
 	</body>
 </html>

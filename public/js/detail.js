@@ -20,8 +20,12 @@ $(document).ready(function(){
 			type:"POST",
 			url:"/"+request_type+"/request/"+master_id,
 			data:"request_writing="+request_writing,
-			success: function(html) {
+			success: function(receiver_id) {
 				console.log("Request Success");
+
+				// TODO
+				// call createNotice
+				createNotice(1,receiver_id);
 
 				// TODO
 				// Display notice of success
@@ -51,8 +55,11 @@ $(document).ready(function(){
 			type:"POST",
 			url:"/"+request_type+"/request/"+pupil_id,
 			data:"request_writing="+request_writing,
-			success: function(html) {
+			success: function(receiver_id) {
 				console.log("Request Success");
+
+				// call createNotice
+				createNotice(2,receiver_id);
 
 				// TODO
 				// Display notice of success

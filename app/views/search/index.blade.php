@@ -14,6 +14,8 @@ Toguru | 検索
 
 @section('body')
 
+		@include('elements.header')	
+
 <div class="splash-container">
     <div class="splash" style="width:100% !important">
 			<div class="pure-g">

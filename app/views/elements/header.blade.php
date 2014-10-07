@@ -4,6 +4,7 @@
         <ul>
 @if ( Auth::check() )
             <li class="pure-menu-selected">{{ HTML::link('/', 'Home') }}</li>
+            <li class="pure-menu-selected">{{ HTML::link('/notice', 'Notice') }}</li>
             <li class="pure-menu-selected">{{ HTML::link('/logout', 'Logout') }}</li>
 @else
             <li class="pure-menu-selected">{{ HTML::link('/', 'Home') }}</li>

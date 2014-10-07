@@ -179,7 +179,7 @@ class AccountController extends BaseController {
 				$user = new User;
 				$user->tw_id = $user_id;
 			}
-			$user->tw_name = $accessToken['screen_name'];
+			$user->username = $accessToken['screen_name'];
 			$user->tw_token = $accessToken['oauth_token'];
 			$user->tw_token_secret = $accessToken['oauth_token_secret'];
 			$user->save();

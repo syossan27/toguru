@@ -21,10 +21,8 @@ class CreateUserTable extends Migration {
 					$table->string('mail_address', 128);
 					$table->string('hash', 64);
 					$table->biginteger('fb_id')->unsigned();
-					$table->string('fb_name');
 					$table->string('fb_access_token');
 					$table->biginteger('tw_id')->unsigned();
-					$table->string('tw_name');
 					$table->string('tw_token');
 					$table->string('tw_token_secret');
 					$table->boolean('valid')->default(0);

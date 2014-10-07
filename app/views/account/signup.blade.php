@@ -13,6 +13,8 @@ Toguru | ユーザ登録
 
 @section('body')
 
+		@include('elements.header')	
+
 <h1>テスト</h1>
 {{ Form::open(['action' => 'AccountController@signUpComplete', 'method' => 'post']) }}
 {{ Form::text('username', '', ['placeholder' => 'ユーザ名']) }}
@@ -20,5 +22,7 @@ Toguru | ユーザ登録
 {{ Form::hidden('hash', $hash) }}
 {{ Form::submit('submit') }}
 {{ Form::close() }}
+
+		@include('elements.footer')	
 
 @stop

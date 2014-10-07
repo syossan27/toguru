@@ -1,30 +1,28 @@
 @extends('layouts.master')
 
 @section('title')
-Toguru | 弟子紹介文編集
+Toguru | お知らせ
 @stop
 
 @section('css')
 {{ HTML::style('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css') }}
 {{ HTML::style('http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css') }}
-{{ HTML::style('css/jquery.tagit.css') }}
 @stop
 
 @section('js')
-{{ HTML::script('js/tag-it.min.js') }}
-{{ HTML::script('js/edit.js') }}
 @stop
 
 @section('body')
 
-		@include('elements.header')	
-
 <div class="splash-container">
     <div class="splash">
-			<h1>弟子紹介文編集ページ</h1>
-			{{ Form::textarea('description', '', ['id' => 'description'])}}
-			{{ Form::text('skill', '', ['id' => 'tagit'])}}
-			{{ Form::submit('submit', ['id' => 'edit-submit'])}}
+			<h1>お知らせ画面</h1>
+				@foreach($notice_list as $notice)
+				<table>
+					<tr>
+					</tr>
+				</table>
+				@endforeach
     </div>
 </div>
 

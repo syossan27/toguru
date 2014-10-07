@@ -15,6 +15,8 @@ Toguru | 設定
 
 @section('body')
 
+		@include('elements.header')	
+
 <div class="splash-container">
     <div class="splash" style="width:100% !important">
 			<h1>設定</h1>

@@ -15,8 +15,7 @@ class CreateMasterTable extends Migration {
 		if (!Schema::hasTable('master')) 
 		{
 			Schema::create('master', function($table) {
-					$table->increments('id');
-					$table->string('user_id', 20);
+					$table->string('id');
 					$table->string('skill', 255);
 					$table->string('description', 255);
 					$table->timestamps();

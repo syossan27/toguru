@@ -9,7 +9,7 @@
 			<br>
 			紹介文：{{ $user['description']}}
 			<br>
-			<button class="pure-button button-secondary request-pupil-button" value="{{ $user['user_id'] }}">申込</button>
+			<button class="pure-button button-secondary request-pupil-button" value="{{ $user['id'] }}">申込</button>
 		@endforeach
 	@endif
 </div>

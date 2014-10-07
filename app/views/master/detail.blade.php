@@ -11,8 +11,7 @@ Toguru | 師匠詳細
 @stop
 
 @section('js')
-{{ HTML::script('js/tag-it.min.js') }}
-{{ HTML::script('js/do-tag-it.js') }}
+{{ HTML::script('js/notice.js') }}
 {{ HTML::script('js/detail.js') }}
 @stop
 
@@ -28,14 +27,8 @@ Toguru | 師匠詳細
 			説明：    {{ $master_detail['description'] }}
 			<br>
 			{{ Form::text('request-writing')}}
-			<button id="request-master-button" class="pure-button button-secondary" value="{{ $master_detail['user_id'] }}">送信</button>
+			<button id="request-master-button" class="pure-button button-secondary" value="{{ $master_detail['id'] }}">送信</button>
     </div>
-</div>
-
-<div class="content-wrapper">
-		
-		@include('elements.footer')	
-
 </div>
 
 @stop

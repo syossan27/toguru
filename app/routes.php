@@ -59,3 +59,7 @@ Route::post('setting/update-password', 'SettingController@updateUserPassword');
 Route::post('setting/check-old-password', 'SettingController@checkOldPassword');
 Route::get('setting/update-username', 'SettingController@viewUpdateUserName');
 Route::post('setting/update-username', 'SettingController@updateUserName');
+
+// お知らせページ
+Route::get('notice', 'NoticeController@index');
+Route::post('notice/create', 'NoticeController@create');

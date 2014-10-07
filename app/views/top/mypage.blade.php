@@ -13,6 +13,8 @@ Toguru | マイページ
 
 @section('body')
 
+		@include('elements.header')	
+
 <div class="splash-container">
     <div class="splash">
 			<h1>my page</h1>

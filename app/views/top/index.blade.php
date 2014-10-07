@@ -13,6 +13,8 @@ Toguru | トップ
 
 @section('body')
 
+		@include('elements.header')	
+
 <div class="splash-container">
     <div class="splash">
         <h1 class="splash-head">Toguru</h1>

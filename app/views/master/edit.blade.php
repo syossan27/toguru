@@ -12,10 +12,12 @@ Toguru | 師匠紹介文編集
 
 @section('js')
 {{ HTML::script('js/tag-it.min.js') }}
-{{ HTML::script('js/do-tag-it.js') }}
+{{ HTML::script('js/edit.js') }}
 @stop
 
 @section('body')
+
+		@include('elements.header')	
 
 <div class="splash-container">
     <div class="splash">
