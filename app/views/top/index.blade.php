@@ -9,6 +9,7 @@ Toguru | トップ
 @stop
 
 @section('js')
+{{ HTML::script('js/top.js') }}
 @stop
 
 @section('body')
@@ -16,6 +17,7 @@ Toguru | トップ
 		@include('elements.header')	
 
 <div class="splash-container">
+		<div id="background"></div>
     <div class="splash">
         <h1 class="splash-head">Toguru</h1>
 				{{ $message }}
@@ -24,25 +26,31 @@ Toguru | トップ
         </p>
 				<!-- Sign Up -->
 				{{ Form::open(array('action' => 'AccountController@verifyMail', 'class' => 'pure-form pure-g pure-u-11-24', 'method' => 'post')) }}
-						<div class="pure-u-17-24">
+						<div id="signup-form" class="pure-u">
 							<input id="email" type="email" name="email" placeholder="Email" value="wisdom1027@gmail.com">
+							<a href="/fb_login" class="btn btn-block btn-social btn-facebook">
+								<i class="fa fa-facebook"></i>
+								 Sign in with Facebook
+							</a>
+							<a href="/tw_login" class="btn btn-block btn-social btn-twitter">
+								<i class="fa fa-twitter"></i>
+								 Sign in with Twitter 
+							</a>
+							<input type="submit" class="pure-button button-success">
 						</div>
-						<div class="pure-u">
-							<button type="submit" class="pure-button">Sign up</button>
+						<div id="signup">
+							<button type="button" class="pure-button">Sign up</button>
 						</div>
-						<a href="/fb_login">fb</a>
-						<a href="/tw_login">tw</a>
 				{{ Form::close() }}
 				<!-- Sign In -->
 				{{ Form::open(array('action' => 'AccountController@login', 'class' => 'pure-form pure-g pure-u-11-24', 'method' => 'post')) }}
-						<div class="pure-u-1">
-							<input id="username" type="username" name="username" placeholder="ユーザ名">
-						</div>
-						<div class="pure-u-17-24">
+						<div id="signin-form" class="pure-u">
+							<input id="username" type="text" name="username" placeholder="ユーザ名">
 							<input id="password" type="password" name="password" placeholder="パスワード">
+							<input type="submit" class="pure-button button-success">
 						</div>
-						<div class="pure-u">
-							<button type="submit" class="pure-button">Sign In</button>
+						<div id="signin">
+							<button type="button" class="pure-button">Sign In</button>
 						</div>
 				{{ Form::close() }}
     </div>
@@ -50,49 +58,47 @@ Toguru | トップ
 
 <div class="content-wrapper">
     <div class="content">
-        <h2 class="content-head is-center">Toguruはこんなサービス</h2>
+				<div class="pure-g">
+					<div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+							<!-- サービス概念図 -->
+							<img class="pure-img-responsive" alt="File Icons" width="300" src="">
+					</div>
+					<div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+							<!-- サービス概念図 -->
+							<img class="pure-img-responsive" alt="File Icons" width="300" src="">
+					</div>
+					<div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+							<!-- サービス概念図 -->
+							<img class="pure-img-responsive" alt="File Icons" width="300" src="">
+					</div>
+				</div>
 
-        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-						<!-- サービス概念図 -->
-            <img class="pure-img-responsive" alt="File Icons" width="300" src="img/common/file-icons.png">
-        </div>
-
-        <div class="pure-g">
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
+        <div id="sales-points" class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
                 <h3 class="content-subhead">
-                    <i class="fa fa-rocket"></i>
-										ウリ一つ目
+                    <i class="fa fa-male"></i>
+										師匠や弟子との出会い
                 </h3>
                 <p>
-										ウリの説明
+									Toguruではあなたにピッタリの師匠や弟子を見つけることが出来ます。
                 </p>
             </div>
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
                 <h3 class="content-subhead">
-                    <i class="fa fa-mobile"></i>
-										ウリ２つ目
+                    <i class="fa fa-question"></i>
+										師匠からの課題・弟子からの質問
                 </h3>
                 <p>
-										ウリの説明
+									師弟になれば師匠から弟子へ課題を与えたり、弟子から師匠へ質問を投げることが出来ます。
                 </p>
             </div>
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
                 <h3 class="content-subhead">
-                    <i class="fa fa-th-large"></i>
-										ウリ３つ目
+                    <i class="fa fa-money"></i>
+										感謝の気持ちをお金で	
                 </h3>
                 <p>
-										ウリの説明
-                </p>
-            </div>
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
-                    <i class="fa fa-check-square-o"></i>
-										ウリ４つ目
-                </h3>
-                <p>
-										ウリの説明
+									お世話になった師匠へはお金を送ることも出来ます。
                 </p>
             </div>
         </div>
@@ -101,54 +107,60 @@ Toguru | トップ
     <div class="ribbon l-box-lrg pure-g">
         <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
 
-            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+            <h2 class="content-head content-head-ribbon">お知らせ</h2>
 
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor.
+							test
             </p>
         </div>
     </div>
 
     <div class="content">
-        <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+        <h2 class="content-head is-center">あなたのご意見お聞かせ下さい！</h2>
 
         <div class="pure-g">
             <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
                 <form class="pure-form pure-form-stacked">
                     <fieldset>
 
-                        <label for="name">Your Name</label>
-                        <input id="name" type="text" name="name" placeholder="Your Name">
+                        <input id="name" type="text" name="name" placeholder="お名前">
 
+                        <input id="email" type="email" name="email" placeholder="メールアドレス">
 
-                        <label for="email">Your Email</label>
-                        <input id="email" type="email" name="email" placeholder="Your Email">
+                        <textarea id="opinion" class="pure-u-1" name="opinion" placeholder="ご意見"></textarea>
 
-                        <label for="password">Your Password</label>
-                        <input id="password" type="password" name="password" placeholder="Your Password">
-
-                        <button type="submit" class="pure-button">Sign Up</button>
+                        <button type="submit" class="pure-button">意見を送る</button>
                     </fieldset>
                 </form>
             </div>
 
             <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-                <h4>Contact Us</h4>
+                <h4>是非ご意見を！</h4>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
+									ユーザ様のご意見は開発する上で貴重な情報になります。
+                </p>
+                <p>
+									些細なことでも宜しいですので、ご意見がありましたら左のフォームよりご意見をお送り下さい。
                 </p>
 
-                <h4>More Information</h4>
+                <h4>運営について</h4>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.
+									運営元：<a href="https://twitter.com/syossan27">@syossan27</a>
                 </p>
+								<h4>よろしければ皆様の手でToguruを広めて下さい！</h4>
+								<a href="http://www.facebook.com/sharer.php?u=`http://toguru.net`&amp;
+												 t=`エンジニアの師匠 or 弟子を見つけるサービス！「Toguru」`"
+									 onClick="window.open(encodeURI(decodeURI(this.href)),
+									 	'sharewindow',
+									 	'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'
+									 ); return false;">{{ HTML::image('image/facebook.png')}}</a>
+								<a href="http://twitter.com/intent/tweet?text=`エンジニアの師匠 or 弟子を見つけるサービス！`&amp;
+												 url=`http://toguru.net`&amp;
+												 via=`syossan27`"
+									 onClick="window.open(encodeURI(decodeURI(this.href)),
+										 'tweetwindow',
+										 'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=1'
+									 ); return false;">{{ HTML::image('image/twitter.png')}}</a>
             </div>
         </div>
     </div>

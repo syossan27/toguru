@@ -20,6 +20,7 @@ Toguru | お知らせ
 				@foreach($notice_list as $notice)
 				<table>
 					<tr>
+						{{ $notice['username'] }}からお知らせです！
 					</tr>
 				</table>
 				@endforeach

@@ -63,3 +63,4 @@ Route::post('setting/update-username', 'SettingController@updateUserName');
 // お知らせページ
 Route::get('notice', 'NoticeController@index');
 Route::post('notice/create', 'NoticeController@create');
+Route::get('notice/get', 'NoticeController@get');

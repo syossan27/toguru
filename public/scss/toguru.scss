@@ -118,6 +118,10 @@ a.pure-button-primary {
 .home-menu .pure-menu-selected a {
   color: white; }
 
+.home-menu .pure-menu-selected span {
+	cursor: pointer;
+  color: white; }
+
 .home-menu a {
   color: #6FBEF3; }
 
@@ -263,4 +267,43 @@ a.pure-button-primary {
 
 #error_new_password {
 	display: none;
+}
+
+#noticeBox-arrow:before {
+	position: absolute;
+	content: '';
+	top: 36px;
+	right: 126px;
+	border-bottom: 20px solid #ccc;
+	border-right: 20px solid transparent;
+	border-left: 20px solid transparent;
+}
+
+#noticeBox-arrow:after {
+	position: absolute;
+	content: '';
+	top: 37px;
+	right: 126px;
+	border-bottom: 20px solid white;
+	border-right: 20px solid transparent;
+	border-left: 20px solid transparent;
+	z-index: 9999;
+}
+
+#noticeBox-arrow {
+	display: none;
+}
+
+#noticeBox {
+	display: none;
+	position: absolute;
+	top: 56px;
+	left: 1130px;
+	width: 300px;
+	height: 400px;
+	padding-top: 30px;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 11px;
+	text-align: center;
 }
