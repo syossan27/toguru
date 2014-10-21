@@ -4,8 +4,7 @@ class TopController extends BaseController {
 
 	public function index()
 	{
-
-		$message = Session::get('message', '');
+		$notification_message = Session::get('notification_message', '');
 
 		// Check Login Status
 		if ( Auth::check() ) {
@@ -13,7 +12,7 @@ class TopController extends BaseController {
 			return View::make('top.mypage');
 		} else {
 			// if not Logged in, Display top with message
-			return View::make('top.index')->with('message', $message);
+			return View::make('top.index')->with('notification_message', $notification_message);
 		}
 	}
 

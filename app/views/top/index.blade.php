@@ -19,40 +19,39 @@ Toguru | トップ
 <div class="splash-container">
 		<div id="background"></div>
     <div class="splash">
-        <h1 class="splash-head">Toguru</h1>
-				{{ $message }}
-        <p class="splash-subhead">
-           Toguruはエンジニアの師匠と弟子を繋ぐサービスです。 
-        </p>
-				<!-- Sign Up -->
-				{{ Form::open(array('action' => 'AccountController@verifyMail', 'class' => 'pure-form pure-g pure-u-11-24', 'method' => 'post')) }}
-						<div id="signup-form" class="pure-u">
-							<input id="email" type="email" name="email" placeholder="Email" value="wisdom1027@gmail.com">
-							<a href="/fb_login" class="btn btn-block btn-social btn-facebook">
-								<i class="fa fa-facebook"></i>
-								 Sign in with Facebook
-							</a>
-							<a href="/tw_login" class="btn btn-block btn-social btn-twitter">
-								<i class="fa fa-twitter"></i>
-								 Sign in with Twitter 
-							</a>
-							<input type="submit" class="pure-button button-success">
-						</div>
-						<div id="signup">
-							<button type="button" class="pure-button">Sign up</button>
-						</div>
-				{{ Form::close() }}
-				<!-- Sign In -->
-				{{ Form::open(array('action' => 'AccountController@login', 'class' => 'pure-form pure-g pure-u-11-24', 'method' => 'post')) }}
-						<div id="signin-form" class="pure-u">
-							<input id="username" type="text" name="username" placeholder="ユーザ名">
-							<input id="password" type="password" name="password" placeholder="パスワード">
-							<input type="submit" class="pure-button button-success">
-						</div>
-						<div id="signin">
-							<button type="button" class="pure-button">Sign In</button>
-						</div>
-				{{ Form::close() }}
+			<h1 class="splash-head">Toguru</h1>
+			<p class="splash-subhead">
+				 Toguruはエンジニアの師匠と弟子を繋ぐサービスです。 
+			</p>
+			<!-- Sign Up -->
+			<div class='pure-form pure-g pure-u-11-24'> 
+				<div id="signup-form" class="pure-u">
+					<input id="signup-email" type="email" name="email" placeholder="Email" value="wisdom1027@gmail.com">
+					<input type="submit" id="signup-submit" class="pure-button button-success">
+					<a href="/fb_login" class="btn btn-block btn-social btn-facebook">
+						<i class="fa fa-facebook"></i>
+						 Sign in with Facebook
+					</a>
+					<a href="/tw_login" class="btn btn-block btn-social btn-twitter">
+						<i class="fa fa-twitter"></i>
+						 Sign in with Twitter 
+					</a>
+				</div>
+				<div id="signup">
+					<button type="button" class="pure-button">Sign up</button>
+				</div>
+			</div>
+			<!-- Sign In -->
+			{{ Form::open(array('action' => 'AccountController@login', 'class' => 'pure-form pure-g pure-u-11-24', 'method' => 'post')) }}
+				<div id="signin-form" class="pure-u">
+					<input id="signin-username" type="text" name="username" placeholder="ユーザ名">
+					<input id="signin-password" type="password" name="password" placeholder="パスワード">
+					<input type="submit" id="signin-submit" class="pure-button button-success">
+				</div>
+				<div id="signin">
+					<button type="button" class="pure-button">Sign In</button>
+				</div>
+			{{ Form::close() }}
     </div>
 </div>
 

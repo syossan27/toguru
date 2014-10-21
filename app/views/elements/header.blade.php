@@ -1,4 +1,5 @@
 <div class="header">
+		<div id="notification">{{ isset($notification_message) ? $notification_message : '' }}</div>
     <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
 				{{ HTML::link('/', 'Toguru', ['class' => 'pure-menu-heading']) }}
         <ul>

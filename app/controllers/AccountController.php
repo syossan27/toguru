@@ -6,7 +6,6 @@ class AccountController extends BaseController {
 	public function verifyMail()
 	{
 
-
 		// 仮ユーザ登録
 		$confirm_hash = md5( uniqid(mt_rand(), true) );
 		$signup_url = Config::get('app.url')."/signup/".$confirm_hash;
@@ -14,7 +13,7 @@ class AccountController extends BaseController {
 
 		// 既に登録している場合はメール送信を行わずトップページにてエラーメッセージの表示
 		if ( !is_null($old_temp_user = User::firstByAttributes(['mail_address' => $mail_address, 'valid' => 1])) ) {
-			return Redirect::to('/');
+			return Response::make("Error", 500);
 		}	
 
 		// 以前にメールを送信した場合
@@ -34,7 +33,9 @@ class AccountController extends BaseController {
 		});
 
 		// メールを送信しましたと表示
-		return Redirect::to('/');
+		// return Redirect::to('/')->with('notification_message', 'メールを送信しました。');
+		return Response::make("Success", 200);
+
 	}
 
 	// メール認証後の登録
