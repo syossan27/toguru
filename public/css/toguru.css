@@ -476,20 +476,22 @@ a.pure-button-primary {
 
 #main {
   position: absolute;
-	background: #f3f3f3 !important;
-  top: 55;
+	background: #f3f3f3;
+	padding-top: 55;
   width: 100%;
   min-height: 12%;
   z-index: 2;
-  background: white;
-  border-top: 1px solid; }
+  border-top: 1px solid; 
+	min-height: 720;
+	height: 100%; }
 
 #user-data {
 	background: white;
 	width: 500;
-	margin: 100 auto 100;
+	margin: 50 auto 50;
 	padding: 30;
 	text-align: center;
 	border: 1 solid #dedede;
-	border-radius: 8;
+	border-radius: 8; 
+	overflow: scroll;
 }
