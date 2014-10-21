@@ -15,14 +15,22 @@ Toguru | ユーザ登録
 
 		@include('elements.header')	
 
-<h1>テスト</h1>
-{{ Form::open(['action' => 'AccountController@signUpComplete', 'method' => 'post']) }}
-{{ Form::text('username', '', ['placeholder' => 'ユーザ名']) }}
-{{ Form::text('password', '', ['placeholder' => 'パスワード']) }}
-{{ Form::hidden('hash', $hash) }}
-{{ Form::submit('submit') }}
-{{ Form::close() }}
+<div id="main">
+	<div class="content">
+		<div id="user-data" class="pure-form">
+			<p>ユーザ情報の登録を行います。</p>
+			<p>ユーザ名とパスワードを入力して、<br>サインアップボタンをクリックして下さい。</p>
+			{{ Form::open(['action' => 'AccountController@signUpComplete', 'method' => 'post']) }}
+			{{ Form::text('username', '', ['placeholder' => 'ユーザ名']) }}
+			{{ Form::password('password') }}
+			{{ Form::hidden('hash', $hash) }}
+			{{ Form::submit('サインアップ', ['class' => 'pure-button button-success']) }}
+			{{ Form::close() }}
+		</div>
+	</div>
 
 		@include('elements.footer')	
+
+</div>
 
 @stop
