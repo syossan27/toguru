@@ -16,7 +16,7 @@ Toguru | ユーザ登録
 		@include('elements.header')	
 
 <div id="main">
-	<div class="content">
+	<div class="content signup-content">
 		<div id="user-data" class="pure-form">
 			<p>ユーザ情報の登録を行います。</p>
 			<p>ユーザ名とパスワードを入力して、<br>サインアップボタンをクリックして下さい。</p>

@@ -30,13 +30,10 @@ $(document).ready(function(){
 			},
 			error: function(msg) {
 				$("#notification").slideUp(function(){
-					$("#notification").css("background-color","rgb(202, 60, 60)")
-														.text('メール送信に失敗しました。既に登録されているか、有効なメールアドレスではない可能性があります。')
-														.slideDown("slow")
-														.delay(3000)
-														.slideUp("slow",function(){
-															$("#notification").css("background-color","#49c666")
-														});
+					$("#notification_error").text('メール送信に失敗しました。既に登録されているか、有効なメールアドレスではない可能性があります。')
+																	.slideDown("slow")
+																	.delay(3000)
+																	.slideUp("slow");
 				})
 			}
 		});

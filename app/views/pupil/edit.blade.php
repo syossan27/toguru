@@ -19,17 +19,16 @@ Toguru | 弟子紹介文編集
 
 		@include('elements.header')	
 
-<div class="splash-container">
-    <div class="splash">
+<div id="main">
+    <div class="content">
+
 			<h1>弟子紹介文編集ページ</h1>
 			{{ Form::textarea('description', '', ['id' => 'description'])}}
 			{{ Form::text('skill', '', ['id' => 'tagit'])}}
 			{{ Form::submit('submit', ['id' => 'edit-submit'])}}
-    </div>
-</div>
 
-<div class="content-wrapper">
-		
+    </div>
+
 		@include('elements.footer')	
 
 </div>

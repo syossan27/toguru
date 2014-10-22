@@ -109,7 +109,7 @@ class AccountController extends BaseController {
 		{
 			return Redirect::to('/');
 		} else {
-			return Redirect::to('/');
+			return Redirect::to('/')->with('notification_error_message', 'ログインに失敗しました。');
 		}
 
 		// View上で「ログイン出来ませんでしたと表示」
@@ -130,14 +130,14 @@ class AccountController extends BaseController {
 	{
 		$code = Input::get('code');
 		if (strlen($code) == 0) {
-			return Redirect::to('/')->with('message', 'ログインできませんでした。');
+			return Redirect::to('/')->with('notification_error_message', 'ログインに失敗しました。');
 		}
 
 		$facebook = new Facebook(Config::get('facebook'));
 		$fb_id = $facebook->getUser();
 
 		if ($fb_id == 0) {
-			return Redirect::to('/')->with('message', 'ログインできませんでした。');
+			return Redirect::to('/')->with('notification_error_message', 'ログインに失敗しました。');
 		}
 
 		$user_id = User::where('fb_id', '=', $fb_id)->pluck('id');
@@ -148,19 +148,20 @@ class AccountController extends BaseController {
 			$me = $facebook->api('/me');
 			$user->username = $me['name'];
 			$user->fb_access_token = $facebook->getAccessToken();
+			$user->valid = 1;
 			$user->save();
 		}
 
 		Auth::login($user);
 
-		return Redirect::to('/')->with('message', 'ログインしました。');
+		return Redirect::to('/');
 	}
 
 	// Twitterログイン
 	public function tw_login()
 	{
 		if (Auth::check()) {
-			return Redirect::to('/')->with('message', 'ログイン済みです。');
+			return Redirect::to('/');
 		}
 		$tokens = Twitter::oAuthRequestToken();
 		Twitter::oAuthAuthorize(array_get($tokens, 'oauth_token'));
@@ -183,20 +184,20 @@ class AccountController extends BaseController {
 			$user->username = $accessToken['screen_name'];
 			$user->tw_token = $accessToken['oauth_token'];
 			$user->tw_token_secret = $accessToken['oauth_token_secret'];
+			$user->valid = 1;
 			$user->save();
 
 			Auth::login($user);
 
 			return Redirect::to('/');
 		} else {
-			return Redirect::to('login')->with('message', 'Twitter認証できませんでした。');
+			return Redirect::to('login')->with('notification_error_message', 'ログインに失敗しました。');
 		}
 	}
 
 	public function logout()
 	{
 		Auth::logout();
-		return Redirect::to('/');
+		return Redirect::to('/')->with('notification_message','ログアウトしました。');
 	}
 }
-

@@ -28,14 +28,6 @@ Toguru | トップ
 				<div id="signup-form" class="pure-u">
 					<input id="signup-email" type="email" name="email" placeholder="Email" value="wisdom1027@gmail.com">
 					<input type="submit" id="signup-submit" class="pure-button button-success">
-					<a href="/fb_login" class="btn btn-block btn-social btn-facebook">
-						<i class="fa fa-facebook"></i>
-						 Sign in with Facebook
-					</a>
-					<a href="/tw_login" class="btn btn-block btn-social btn-twitter">
-						<i class="fa fa-twitter"></i>
-						 Sign in with Twitter 
-					</a>
 				</div>
 				<div id="signup">
 					<button type="button" class="pure-button">Sign up</button>
@@ -47,6 +39,14 @@ Toguru | トップ
 					<input id="signin-username" type="text" name="username" placeholder="ユーザ名">
 					<input id="signin-password" type="password" name="password" placeholder="パスワード">
 					<input type="submit" id="signin-submit" class="pure-button button-success">
+					<a href="/fb_login" class="btn btn-block btn-social btn-facebook">
+						<i class="fa fa-facebook"></i>
+						 Sign in with Facebook
+					</a>
+					<a href="/tw_login" class="btn btn-block btn-social btn-twitter">
+						<i class="fa fa-twitter"></i>
+						 Sign in with Twitter 
+					</a>
 				</div>
 				<div id="signin">
 					<button type="button" class="pure-button">Sign In</button>
@@ -114,7 +114,7 @@ Toguru | トップ
         </div>
     </div>
 
-    <div class="content">
+    <div class="content top-content">
         <h2 class="content-head is-center">あなたのご意見お聞かせ下さい！</h2>
 
         <div class="pure-g">

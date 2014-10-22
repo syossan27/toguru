@@ -19,4 +19,19 @@ $(document).ready(function(){
 		$("#noticeBox-arrow").toggle();		
 		$("#noticeBox").toggle();		
 	})
+
+	// 通知内容がページ読み込み時にあれば表示
+	if ( $('#notification').text() != '' ) {
+		$("#notification").slideDown("slow")
+											.delay(3000)
+											.slideUp("slow");
+	}
+
+	// エラー通知内容がページ読み込み時にあれば表示
+	if ( $('#notification_error').text() != '' ) {
+		$("#notification_error").slideDown("slow")
+											.delay(3000)
+											.slideUp("slow");
+	}
+
 });

@@ -14,8 +14,6 @@ class PupilController extends BaseController {
 		$user_id = Auth::id();
 
 		$search_result = Pupil::join('users', 'pupil.id', '=' ,'users.id')->search($search_text, $user_id)->get();
-
-		Log::debug($search_result);
 		
 		return View::make('pupil.search')->with('users', $search_result);
 	}
