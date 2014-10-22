@@ -520,3 +520,20 @@ a.pure-button-primary {
 	border-radius: 8; 
 	overflow: scroll;
 }
+
+#top-menu * {
+	line-height: 1;
+}
+
+#top-menu > li > a {
+	padding: 0 20;
+}
+
+#top-menu > li > a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+#top-menu > li > a > p {
+	margin: 3 0 0;
+}

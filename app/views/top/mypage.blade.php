@@ -15,18 +15,15 @@ Toguru | マイページ
 
 		@include('elements.header')	
 
-<div class="splash-container">
-    <div class="splash">
-			<h1>my page</h1>
+<div id="main">
+    <div class="content" style="text-align:center;">
+ 			<h1>my page</h1>
 			<a href="/mp">師弟一覧画面</a><br>
 			<a href="/search">検索画面</a><br>
 			<a href="/pupil/edit">弟子紹介文編集画面</a><br>
 			<a href="/master/edit">師匠紹介文編集画面</a><br>
 			<a href="/setting">ユーザ設定画面</a><br>
     </div>
-</div>
-
-<div class="content-wrapper">
 		
 		@include('elements.footer')	
 
