@@ -450,7 +450,7 @@ a.pure-button-primary {
   padding-top: 30px;
   background-color: white;
   border: 1px solid #ccc;
-  border-radius: 11px;
+  border-radius: 6px;
   text-align: center; }
 
 #notification {
@@ -470,7 +470,7 @@ a.pure-button-primary {
 	z-index:99999;
 }
 
-#notification_error {
+#notification-error {
 	display: none;
 	position: fixed;
 	background-color: #ca3c3c;
@@ -536,4 +536,49 @@ a.pure-button-primary {
 
 #top-menu > li > a > p {
 	margin: 3 0 0;
+}
+
+.pure-menu-selected {
+	text-align: center;
+	cursor: pointer;
+}
+
+.pure-menu-selected:hover {
+	background-color: #a7b0b1;
+}
+
+#exchange > a {
+	pointer-events: none;
+}
+
+#dropdown-exchange {
+	display: none;
+	position: absolute;
+	top: 49;
+	left: 70;
+	width: 195;
+	height: 140;
+	cursor: default;
+	z-index: -9999;
+  padding-top: 30;
+  background-color: white;
+  border: 1 solid #ccc;
+  border-radius: 6;
+  text-align: center;
+}
+
+#dropdown-exchange > ul {
+	top: 0;
+	left: 0;
+	padding: 15;
+	text-align: left;
+	visibility: visible;
+}
+
+#dropdown-exchange > ul > li {
+	margin-bottom: 10px;
+}
+
+#dropdown-exchange > ul > li > a {
+	border: none;
 }

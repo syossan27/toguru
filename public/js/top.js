@@ -30,7 +30,7 @@ $(document).ready(function(){
 			},
 			error: function(msg) {
 				$("#notification").slideUp(function(){
-					$("#notification_error").text('メール送信に失敗しました。既に登録されているか、有効なメールアドレスではない可能性があります。')
+					$("#notification-error").text('メール送信に失敗しました。既に登録されているか、有効なメールアドレスではない可能性があります。')
 																	.slideDown("slow")
 																	.delay(3000)
 																	.slideUp("slow");
